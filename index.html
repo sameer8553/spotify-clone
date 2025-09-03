@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/png;base64,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">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Spotify Webside</title>
+</head>
+<body>
+<div class="sidebar">
+    <div class="sidebar-nav">
+        <div class="logo">
+            <a href=""><img src="logo-new.png" alt=""></a>
+        </div>
+
+        <ul>
+            <li><a href="">
+                <span><i class="fa-solid fa-house"></i></span>
+                <span>Home</span>
+            </a></li>
+
+            <li>
+                <a href="">
+                <span><i class="fa-solid fa-magnifying-glass">
+                </i></span>
+                <span>Search</span>
+            </a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="sidebar-nav box2">
+      
+        <ul>
+            <li><a href="">
+                <span><i class="fa-solid fa-book"></i></span>
+                <span class="library">Your Library</span>
+            </a></li>
+
+            <li>
+                <div class="sidebar-scroll">
+                    <div class="create-playlist">
+                        <h4>Create your first playlist</h4>
+                        <p>It's easy, we'll help you</p>
+                        <button>Create playlist</button>
+                    </div>
+                    <div class="create-playlist">
+                        <h4>Let's find some podcasts to follow</h4>
+                        <p>We'll keep you updated on new episode</p>
+                        <button>Browse podcasts</button>
+                    </div>
+                </div>
+        </li>
+        </ul>        
+    <div class="privacy">
+        <ul>
+            <li>
+                <a href="">Legal</a>
+                <a href="">safety & Privacy</a>
+                <a href="">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="">Cookies</a>
+                <a href="">About Ads</a>
+                <a href="">Accessiblity</a>
+            </li>
+            <li>
+                <a href="">Cookies</a>
+              
+            </li>
+        </ul>
+    </div>
+    </div>
+
+    <div class="eng-btn">
+        <button>English</button>
+    </div>
+
+</div>
+
+
+  </div>
+
+ <!---......... Main Section Start From here..........-->
+
+ <div class="main-section">
+    <div class="top-nav">
+        <div class="prev-btn">
+            <button><i class="fa-solid fa-chevron-left"></i></button>
+            <button><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="login-btn">
+            <button class="sign-up">Sign Up</button>
+            <button class="login">Login</button>
+        </div>
+    </div>
+
+
+    <div class="spotify-playlist">
+        <h2>Popular Album</h2>
+        <div class="card">
+            <div class="item">
+                <img src="item-6.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>ANIMAL</h4>
+                <p>Manan Bhardwaj, Vishal Mishra,Jaani</p>
+            </div>
+
+            <div class="item">
+                <img src="item-7.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Still Rollin</h4>
+                <p>Shubh</p>
+            </div>
+            <div class="item">
+                <img src="item-8.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Husn</h4>
+                <p>Anuv Jain</p>
+            </div>
+            <div class="item">
+                <img src="item-9.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Moosetape</h4>
+                <p>Sidhu Moose Wala</p>
+            </div>
+            <div class="item">
+                <img src="item-10.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Satranga</h4>
+                <p>Arijit Singh,Shreyas Puranik, Siddharth</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="spotify-playlist">
+        <h2>Tranding Episodes</h2>
+        <div class="card">
+            <div class="item">
+                <img src="item-1.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Lofi beats</h4>
+                <p>Money Heist</p>
+            </div>
+
+            <div class="item">
+                <img src="item-2.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>TTH</h4>
+                <p>Meredith Grey</p>
+            </div>
+            <div class="item">
+                <img src="item-3.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Chillout Lounge</h4>
+                <p> "Tommy" Shelby</p>
+            </div>
+            <div class="item">
+                <img src="item-4.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Moosetape</h4>
+                <p>Sheldon Cooper</p>
+            </div>
+            <div class="item">
+                <img src="item-5.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Jaaz in the Background</h4>
+                <p>Shaun Murphy</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="spotify-playlist">
+        <h2>Popular Aritist</h2>
+        <div class="card">
+            <div class="item">
+                <img src="item-11.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Pritam</h4>
+                <p>Aritist</p>
+            </div>
+
+            <div class="item">
+                <img src="item-12.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Arijit Singh</h4>
+                <p>Artist</p>
+            </div>
+            <div class="item">
+                <img src="item-13.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>A.R.Rahman</h4>
+                <p>Artist</p>
+            </div>
+            <div class="item">
+                <img src="item-14.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Yo Yo Honey Singh</h4>
+                <p>Artist</p>
+            </div>
+            <div class="item">
+                <img src="item-15.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Atif Aslam</h4>
+                <p>Aritist</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="spotify-playlist">
+        <h2>Popular radio</h2>
+        <div class="card">
+            <div class="item">
+                <img src="item-16.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Arijit Singh </h4>
+                <p>With Sachin-Jigar, Sachet Tandon, Atif Aslam and more </p>
+            </div>
+
+            <div class="item">
+                <img src="item-17.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Diljit Dosanjh</h4>
+                <p>Karan Aujla, Shubh, Sidhu Moose Wala and more</p>
+            </div>
+            <div class="item">
+                <img src="item-18.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>KK </h4>
+                <p>Atif Aslam, Mustafa Zahid, Pritam and more</p>
+            </div>
+            <div class="item">
+                <img src="item-19.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Sidhu Moose Wala</h4>
+                <p> Shubh, AP Dhillon, Amrinder Gill and more</p>
+            </div>
+            <div class="item">
+                <img src="item-20.jpg" alt="">
+                <div class="play-btn">
+                    <span><i class="fa-solid fa-play"></i></span>
+                </div>
+                <h4>Karan Aujla</h4>
+                <p>Shubh, AP Dhillon, DIVINE and more</p>
+            </div>
+        </div>
+    </div>
+
+
+<div class="footer-section">
+    <div class="footer">
+        <div class="footer-links">
+            <div class="footer-column">
+                <div>Company</div>
+                <ul class="col-links">
+                    <li><a href="">About</a></li>
+                        <li><a href="">Jobs</a></li>
+                            <li><a href="">For the Record</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <div>Communities</div>
+                <ul class="col-links">
+                    <li><a href="">For Artists</a></li>
+                        <li><a href="">Developers</a></li>
+                            <li><a href="">Advertisment</a></li>
+                                <li><a href="">Investors</a></li>
+                                    <li><a href="">Vendors</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <div>Useful links</div>
+                <ul class="col-links">
+                    <li><a href="">Support</a></li>
+                        <li><a href="">Free Mobile App</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="social-links">
+        <div>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div>
+    <p class="copyright">&copy; 2024 spotify</p>
+</div>
+
+ </div>
+
+ <div class="preview">
+    <div class="text">
+        <h4>Previwe of Spotify</h4>
+        <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+    </div>
+
+    <div class="button">
+        <button>Sign Up Free</button>
+    </div>
+ </div>
+</body>
+</html>
